@@ -1,7 +1,7 @@
 # cards
-Card API
+Card API Release Notes
 
-System Requirements
+## System Requirements
 
 1. Java 17 SDK
 2. Maven : Version 3.8 and above
