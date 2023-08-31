@@ -100,7 +100,11 @@ curl --location 'http://localhost:8080/v1/card' \
 
 
 
+## Swagger UI
 
+You can view the URLs from the following link : 
+
+http://localhost:8080/swagger-ui/index.html
 
 
 
