@@ -26,12 +26,13 @@ public class DataLoader {
 	@Autowired private UserRepository userRepository;
 	@Autowired private RoleRepository roleRepository;
 	
-	@PostConstruct
+	/**
+	 * @PostConstruct
 	public void createTestUsers() {
 		
 		User user = new User();
 		user.setDatecreated(LocalDateTime.now());
-		user.setEmail("testing1@test.com");
+		user.setEmail("testing23@test.com");
 		user.setPassword(encoder.encode("12345678"));
 		
 		Set<Role> roles = new HashSet();
@@ -43,7 +44,7 @@ public class DataLoader {
 		
 		user = new User();
 		user.setDatecreated(LocalDateTime.now());
-		user.setEmail("testing2@test.com");
+		user.setEmail("testing23@test.com");
 		user.setPassword(encoder.encode("12345678"));
 		
 		roles = new HashSet();
@@ -67,6 +68,9 @@ public class DataLoader {
 		rl = roleRepository.save(rl);
 		return rl;
 	}
+	 * 
+	 */
+	
 	
 
 }
