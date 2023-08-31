@@ -8,7 +8,7 @@ Card API Release Notes
 3. MySQL
 
 
-##Instructions : 
+## Instructions : 
 
 Create a MySQL Database with the following details
 
@@ -32,7 +32,7 @@ To run the application, run the following command :
 
 Attached you will find a postman collection that will list all the APIs you can run :
 
-##Registering a User : 
+## Registering a User : 
 
 curl --location 'http://localhost:8080/v1/auth/signup' \
 --header 'Content-Type: application/json' \
@@ -43,7 +43,7 @@ curl --location 'http://localhost:8080/v1/auth/signup' \
 }'
 
 
-##Login in a User :
+## Login in a User :
 
 curl --location 'http://localhost:8080/v1/auth/signin' \
 --header 'Content-Type: application/json' \
@@ -67,7 +67,7 @@ You will get the following payload as a response :
 }
 
 
-##Cards API
+## Cards API
 
 For making subsequent calls you need to copy the value of the accessToken and add it as a Authorization Bearer header in the calls : 
 
