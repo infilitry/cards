@@ -52,11 +52,6 @@ public class CardServiceImpl implements CardService {
 	@Transactional
 	@Override
 	public CardDTO createCard(CreateCardRequest createCardRequest) {
-		// TODO Auto-generated method stub	
-		
-		//Status sts = Status.get(createCardRequest.status());
-		
-		System.out.println("this is the status ...." + createCardRequest.getStatus().name());
 		
 		Card card = new Card();
 		card.setDatecreated(LocalDateTime.now());

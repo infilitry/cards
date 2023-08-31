@@ -62,8 +62,6 @@ public class UserResource {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
 		String jwt = jwtUtils.generateJwtToken(authentication);
-
-		//ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
 		
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
@@ -91,31 +89,22 @@ public class UserResource {
 		user.setPassword(encoder.encode(signUpRequest.getPassword()));
 
 		Set<String> strRoles = signUpRequest.getRole();
-		
-		for (String str : strRoles) {
-			System.out.println("this is the outcome ...." + str);
-		}
-		
-		
+				
 		Set<Role> roles = new HashSet<>();
 
 		if (strRoles == null) {
 			Role userRole = roleService.findByName("ROLE_USER");
-					//.orElseThrow(() -> new RuntimeException("Error: Role is not found DDDDDDDD."));
 			roles.add(userRole);
 		} else {
 			strRoles.forEach(role -> {
-				System.out.println("this is the outcome in the switch...." + role);
 				switch (role) {
 				case "admin":
 					Role adminRole = roleService.findByName("ROLE_ADMIN");
-					//.orElseThrow(() -> new RuntimeException("Error: Role is not found DDDDTTTTT."));
 					roles.add(adminRole);
 
 					break;
 				default:
 					Role userRole = roleService.findByName("ROLE_USER");
-					//.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 					roles.add(userRole);
 				}
 			});
