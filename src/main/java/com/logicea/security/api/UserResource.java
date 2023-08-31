@@ -34,10 +34,13 @@ import com.logicea.security.domain.User;
 import com.logicea.security.domain.UserDetailsImpl;
 import com.logicea.security.domain.UserService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/v1/auth")
+@Tag(name = "Users", description = "User management APIs")
 public class UserResource {
 
 	@Autowired AuthenticationManager authenticationManager;
