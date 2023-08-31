@@ -67,8 +67,11 @@ public class SecurityConfig {
 		.exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
 		.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 		.authorizeHttpRequests(auth -> 
-		auth.requestMatchers("/v1/auth/**").permitAll()
+		auth
+		.requestMatchers("/v1/auth/**").permitAll()
 		.requestMatchers("/v1/test/**").permitAll()
+		.requestMatchers("/v1/card/**").permitAll()
+		.requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
 		.anyRequest().authenticated());
 
 		http.authenticationProvider(authenticationProvider());

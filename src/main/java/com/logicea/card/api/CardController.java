@@ -24,6 +24,8 @@ import com.logicea.card.domain.CardDTO;
 import com.logicea.card.domain.CardService;
 import com.logicea.card.domain.PagedResult;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 
@@ -42,6 +44,7 @@ import java.util.List;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/v1/card")
+@Tag(name = "Cards", description = "Cards management APIs")
 public class CardController {
 	
 	@Autowired private CardService cardService;

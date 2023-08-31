@@ -22,6 +22,10 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.utility.DockerImageName;
 
+import com.logicea.card.api.payload.CreateCardRequest;
+import com.logicea.card.domain.CardDTO;
+import com.logicea.card.domain.CardService;
+import com.logicea.card.domain.Status;
 import com.logicea.security.domain.Role;
 import com.logicea.security.domain.RoleRepository;
 import com.logicea.security.domain.RoleService;
@@ -86,7 +90,9 @@ public class ControllerTests {
 		assertThat(response).isNotNull();
 		assertThat(response.getId()).isNotNull();
 	}
-
+	
+	
+	
 
 	private Role createRole(String role) {
 
