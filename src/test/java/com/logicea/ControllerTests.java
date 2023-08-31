@@ -55,6 +55,8 @@ public class ControllerTests {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
+
+
 	@DynamicPropertySource
 	static void registerPgProperties(DynamicPropertyRegistry registry) {
 		registry.add("spring.datasource.url", mySQLContainer::getJdbcUrl);
@@ -88,13 +90,7 @@ public class ControllerTests {
 
 	private Role createRole(String role) {
 
-		Role rl = roleRepository.findByName(role);
-
-		if (rl != null) {
-			return rl;
-		}
-
-		rl = new Role();
+		Role rl  = new Role();
 		rl.setDatecreated(LocalDateTime.now());
 		rl.setName(role);
 		rl = roleRepository.save(rl);

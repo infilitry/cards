@@ -27,7 +27,9 @@ public class DataLoader {
 	@Autowired private RoleRepository roleRepository;
 	
 	/**
-	 * @PostConstruct
+	 * 
+	 */
+	@PostConstruct
 	public void createTestUsers() {
 		
 		User user = new User();
@@ -68,9 +70,6 @@ public class DataLoader {
 		rl = roleRepository.save(rl);
 		return rl;
 	}
-	 * 
-	 */
-	
 	
 
 }
