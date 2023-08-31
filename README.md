@@ -43,16 +43,6 @@ curl --location 'http://localhost:8080/v1/auth/signup' \
 }'
 
 
-## Login in a User :
-
-curl --location 'http://localhost:8080/v1/auth/signin' \
---header 'Content-Type: application/json' \
---header 'Cookie: bezkoder=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDExMDM1LCJleHAiOjE2OTM0MTEwNjV9.83cCSpLTp1Ue9uGG3uhSE07dhhwuGvG8MgBDIvogLrc' \
---data-raw '{
-    "email" : "tester5@testing.com",
-    "password" : "12345678"
-}'
-
 You will get the following payload as a response : 
 
 {
@@ -65,6 +55,17 @@ You will get the following payload as a response :
     "tokenType": "Bearer",
     "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDE3NDY1LCJleHAiOjE2OTM1MDM4NjV9.Ysu-FDfnNVVSxVAb0DTCNL4cNrMBPH-i00eEjiZbgww"
 }
+
+
+## Login in a User :
+
+curl --location 'http://localhost:8080/v1/auth/signin' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: bezkoder=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDExMDM1LCJleHAiOjE2OTM0MTEwNjV9.83cCSpLTp1Ue9uGG3uhSE07dhhwuGvG8MgBDIvogLrc' \
+--data-raw '{
+    "email" : "tester5@testing.com",
+    "password" : "12345678"
+}'
 
 
 ## Cards API
