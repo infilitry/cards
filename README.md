@@ -33,7 +33,7 @@ To run the application, run the following command :
 Attached you will find a postman collection that will list all the APIs you can run :
 
 ## Registering a User : 
-
+```
 curl --location 'http://localhost:8080/v1/auth/signup' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -41,10 +41,11 @@ curl --location 'http://localhost:8080/v1/auth/signup' \
     "password" : "12345678",
     "role" : ["user", "admin"]
 }'
-
+```
 
 You will get the following payload as a response : 
 
+```
 {
     "id": 2,
     "email": "tester5@testing.com",
@@ -55,10 +56,11 @@ You will get the following payload as a response :
     "tokenType": "Bearer",
     "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDE3NDY1LCJleHAiOjE2OTM1MDM4NjV9.Ysu-FDfnNVVSxVAb0DTCNL4cNrMBPH-i00eEjiZbgww"
 }
-
+```
 
 ## Login in a User :
 
+```
 curl --location 'http://localhost:8080/v1/auth/signin' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: bezkoder=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDExMDM1LCJleHAiOjE2OTM0MTEwNjV9.83cCSpLTp1Ue9uGG3uhSE07dhhwuGvG8MgBDIvogLrc' \
@@ -66,6 +68,7 @@ curl --location 'http://localhost:8080/v1/auth/signin' \
     "email" : "tester5@testing.com",
     "password" : "12345678"
 }'
+```
 
 
 ## Cards API
@@ -74,6 +77,7 @@ For making subsequent calls you need to copy the value of the accessToken and ad
 
 Creating Card : 
 
+```
 curl --location 'http://localhost:8080/v1/card' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDE3NDY1LCJleHAiOjE2OTM1MDM4NjV9.Ysu-FDfnNVVSxVAb0DTCNL4cNrMBPH-i00eEjiZbgww' \
@@ -85,20 +89,23 @@ curl --location 'http://localhost:8080/v1/card' \
     "status" : "TODO"
 
 }'
+```
 
 Get Specific Card :
 
+```
 curl --location 'http://localhost:8080/v1/card/252' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDE3NDY1LCJleHAiOjE2OTM1MDM4NjV9.Ysu-FDfnNVVSxVAb0DTCNL4cNrMBPH-i00eEjiZbgww' \
 --header 'Cookie: bezkoder=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDExMDM1LCJleHAiOjE2OTM0MTEwNjV9.83cCSpLTp1Ue9uGG3uhSE07dhhwuGvG8MgBDIvogLrc'
-
+```
 
 Listing all cards [You need admin role]
 
+```
 curl --location 'http://localhost:8080/v1/card' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDE3NDY1LCJleHAiOjE2OTM1MDM4NjV9.Ysu-FDfnNVVSxVAb0DTCNL4cNrMBPH-i00eEjiZbgww' \
 --header 'Cookie: bezkoder=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZXI1QHRlc3RpbmcuY29tIiwiaWF0IjoxNjkzNDExMDM1LCJleHAiOjE2OTM0MTEwNjV9.83cCSpLTp1Ue9uGG3uhSE07dhhwuGvG8MgBDIvogLrc'
-
+```
 
 
 ## Swagger UI
