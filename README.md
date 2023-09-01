@@ -11,25 +11,25 @@ Card API Release Notes
 ## Instructions : 
 
 Create a MySQL Database with the following details
-
+```
   database : cardib
   user: [set-your-installed-username]
   pass: [set-your-installed-password]
-
+```
 Pull the code :
-
+```
   git clone https://github.com/infilitry/cards
-
+```
 Edit cards/src/main/resources/application.properties file. Set your mysql username and password
 
 Run the following build command :
-
+```
   mvn clean install.
-
+```
 To run the application, run the following command :
-
+```
   mvn spring-boot:run
-
+```
 Attached you will find a postman collection that will list all the APIs you can run :
 
 ## Registering a User : 
@@ -69,7 +69,6 @@ curl --location 'http://localhost:8080/v1/auth/signin' \
     "password" : "12345678"
 }'
 ```
-
 
 ## Cards API
 
